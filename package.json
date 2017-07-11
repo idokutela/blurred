@@ -1,8 +1,8 @@
 {
-  "name": "glassy",
+  "name": "blurred",
   "author": "Alexander Kahle",
   "license": "SEE LICENSE IN LICENSE.md",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "devDependencies": {
     "@types/core-js": "^0.9.42",
     "tslint": "^5.5.0",

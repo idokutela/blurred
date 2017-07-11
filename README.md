@@ -1,4 +1,4 @@
-# `fastBlur`
+# `blurred`
 A fast image blur, based on [Stack Blur](http://incubator.quasimondo.com/processing/fast_blur_deluxe.php).
 
 Get it:
@@ -9,7 +9,7 @@ Get it:
 Basic usage:
 
 ```js
-const blur = require('glassy');
+const blur = require('blurred');
 
 let buffer;
 /*
@@ -70,7 +70,7 @@ pass a height.
 
 One can also obtain this from `lib/blur`.
 
-## `glassy/browser`
+## `blurred/browser`
 This exports three functions.
 
 ### `blurCanvas(canvas: HTMLCanvasElement, radius: number, x, y, width: number, height: number): void`
