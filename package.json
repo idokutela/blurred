@@ -2,7 +2,11 @@
   "name": "blurred",
   "author": "Alexander Kahle",
   "license": "SEE LICENSE IN LICENSE.md",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idokutela/blurred.git"
+  },
   "devDependencies": {
     "@types/core-js": "^0.9.42",
     "tslint": "^5.5.0",
