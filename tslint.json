@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "tslint-microsoft-contrib"
+  ],
+  "rules": {
+    "max-func-body-length": false,
+    "no-default-export": false,
+    "no-bitwise": false,
+    "no-increment-decrement": false,
+    "export-name": false,
+    "no-relative-imports": false
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "glassy",
+  "author": "Alexander Kahle",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@types/core-js": "^0.9.42",
+    "tslint": "^5.5.0",
+    "tslint-microsoft-contrib": "^5.0.1",
+    "typescript": "^2.4.1"
+  },
+  "scripts": {
+    "ts": "tsc"
+  }
+}
