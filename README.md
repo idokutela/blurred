@@ -87,6 +87,10 @@ for that image, depending on whether the `asDataURL` flag is true.
 ## Typescript
 The modules `lib/blur` and `lib/browser` are typed.
 
+## Changelog
+
+ - 1.01 : very small bug fix. Blur height is calculated correctly.
+
 ## Copyright
 The (original implementation)[http://www.quasimondo.com/StackBlurForCanvas/StackBlurDemo.html] is
 Copyright (c) 2010 Mario Klingemann. 

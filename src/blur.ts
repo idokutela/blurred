@@ -93,7 +93,7 @@ function makeIBlurStack(): IBlurStack {
  * @param radius - the blur radius
  */
 export default function blur(
-  pixels: Uint8ClampedArray, radius: number, width: number, height: number = pixels.length / ( 3 * width )
+  pixels: Uint8ClampedArray, radius: number, width: number, height: number = pixels.length / ( 4 * width )
 ): Uint8ClampedArray {
   const isNotValid: boolean = isNaN(radius) || radius < 1;
   if (isNotValid) {
