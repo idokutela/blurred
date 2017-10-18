@@ -1,1 +1,1 @@
-module.exports = require('dist/blur').default;
+module.exports = require('./lib/blur').default;
