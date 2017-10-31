@@ -28,3 +28,15 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+# emacs
+
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+auto-save-list
+tramp
+.\#*
+

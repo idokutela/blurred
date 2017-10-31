@@ -29,6 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
   OTHER DEALINGS IN THE SOFTWARE.
 */
+// prettier-ignore
 var mulTable = [
     512, 512, 456, 512, 328, 456, 335, 512, 405, 328, 271, 456, 388, 335, 292, 512,
     454, 405, 364, 328, 298, 271, 496, 456, 420, 388, 360, 335, 312, 292, 273, 512,
@@ -47,6 +48,7 @@ var mulTable = [
     332, 329, 326, 323, 320, 318, 315, 312, 310, 307, 304, 302, 299, 297, 294, 292,
     289, 287, 285, 282, 280, 278, 275, 273, 271, 269, 267, 265, 263, 261, 259
 ];
+// prettier-ignore
 var shgTable = [
     9, 11, 12, 13, 13, 14, 14, 15, 15, 15, 15, 16, 16, 16, 16, 17,
     17, 17, 17, 17, 17, 17, 18, 18, 18, 18, 18, 18, 18, 18, 18, 19,
@@ -76,25 +78,28 @@ function makeIBlurStack() {
 }
 /**
  * Blurs image data in place. The core op: the image is represented
- * as a clamped array, and is assumed to be RGB. All numbers must be
- * integers.
+ * as a clamped array. Pixels are assumed to consume four bytes: three
+ * byte-long colours, and one alpha byte. The alpha channel is ignored in the blur.
+ *
+ * All number parameters must be integers.
  *
  * @param pixels - the array representing the image
- * @param width - the width of the image
- * @param height - the height of the image
  * @param radius - the blur radius
+ * @param width - the width of the image
+ * @param height - the height of the image: optional
  */
 function blur(pixels, radius, width, height) {
-    if (height === void 0) { height = pixels.length / (4 * width); }
+    if (height === void 0) { height = pixels.length / ((width | 0) << 2); }
     var isNotValid = isNaN(radius) || radius < 1;
     if (isNotValid) {
-        throw new Error('Invalid radius');
+        throw new Error("Invalid radius");
     }
     width |= 0;
     height |= 0;
     radius |= 0;
     var div = radius + radius + 1;
-    var w4 = width << 2;
+    // TODO: Probably accidentally left over -- check this
+    //  const w4: number = width << 2;
     var widthMinus1 = width - 1;
     var heightMinus1 = height - 1;
     var radiusPlus1 = radius + 1;
@@ -253,7 +258,7 @@ function blur(pixels, radius, width, height) {
             gOutSum -= stackIn.g;
             bOutSum -= stackIn.b;
             p = y + radiusPlus1;
-            p = (x + ((p < heightMinus1 ? p : heightMinus1) * width)) << 2;
+            p = (x + (p < heightMinus1 ? p : heightMinus1) * width) << 2;
             stackIn.r = pixels[p];
             stackIn.g = pixels[p + 1];
             stackIn.b = pixels[p + 2];

@@ -11,14 +11,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 var blur_1 = require("./blur");
 function getContext(canvas) {
-    var context = canvas.getContext('2d');
+    var context = canvas.getContext("2d");
     if (context === null) {
-        throw new Error('unable to establish canvas context');
+        throw new Error("unable to establish canvas context");
     }
     return context;
 }
 function makeCanvas(width, height) {
-    var newCanvas = document.createElement('canvas');
+    var newCanvas = document.createElement("canvas");
     newCanvas.width = width;
     newCanvas.height = height;
     newCanvas.style.width = width + "px";
@@ -27,6 +27,7 @@ function makeCanvas(width, height) {
 }
 /**
  * Blurs a rectangle in a canvas.
+ *
  * @param canvas The canvas to apply the operation to
  * @param radius The blur radius
  * @param x      The x position of the top left corner of the blur region
@@ -49,9 +50,10 @@ exports.blurCanvas = blurCanvas;
 /**
  * Blurs an image. By default does so in place, but if the asImmutable option is set to true
  * it does not modify the original. Returns the blurred image.
+ *
  * @param img    The image to blur
  * @param radius The blur radius
- * @param asImmutable true if the original image is to be copied
+ * @param asImmutable true if the original image is to be copied and left unchanged.
  */
 function blurImage(img, radius, asImmutable) {
     var w = img.naturalWidth;

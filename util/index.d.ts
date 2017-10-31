@@ -1,5 +1,6 @@
 /**
  * Blurs a rectangle in a canvas.
+ *
  * @param canvas The canvas to apply the operation to
  * @param radius The blur radius
  * @param x      The x position of the top left corner of the blur region
@@ -11,9 +12,10 @@ export declare function blurCanvas(canvas: HTMLCanvasElement, radius: number, x?
 /**
  * Blurs an image. By default does so in place, but if the asImmutable option is set to true
  * it does not modify the original. Returns the blurred image.
+ *
  * @param img    The image to blur
  * @param radius The blur radius
- * @param asImmutable true if the original image is to be copied
+ * @param asImmutable true if the original image is to be copied and left unchanged.
  */
 export declare function blurImage(img: HTMLImageElement, radius: number, asImmutable?: boolean): HTMLImageElement;
 /**
