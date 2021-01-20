@@ -36,7 +36,7 @@ const blurRadius = 14;
 // Blur an image located at a URL
 blurURL('http://someurl', blurRadius)
   .then(image => {
-    // do something with the image -- the argumant is an HTMLImageElement
+    // do something with the image -- the argument is an HTMLImageElement
   })
   .catch(err => {
     console.log('Error loading or blurring image.');
